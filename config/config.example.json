@@ -1,0 +1,33 @@
+{
+  "_comment": "Скопируйте этот файл в config.json и настройте под вашу организацию. config.json не входит в поставку исходного кода (см. п. 4.6, 5.6.4 ТЗ) и не должен передаваться третьим лицам.",
+
+  "port": 3000,
+
+  "auth": {
+    "jwtSecret": "CHANGE_ME_TO_A_RANDOM_SECRET",
+    "tokenExpiryDays": 30
+  },
+
+  "uploads": {
+    "maxSizeMB": 50
+  },
+
+  "llm": {
+    "_comment": "enabled — единый параметр полного отключения функций ИИ (п. 5.6.5). activeProvider — 'template', 'gemini' или 'ollama'; смена без изменения кода (п. 5.6.1, 5.6.4).",
+    "enabled": true,
+    "activeProvider": "template",
+    "timeoutMs": 10000,
+
+    "providers": {
+      "gemini": {
+        "apiBase": "https://generativelanguage.googleapis.com/v1beta",
+        "model": "gemini-2.0-flash",
+        "apiKey": ""
+      },
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "model": "llama3.1"
+      }
+    }
+  }
+}

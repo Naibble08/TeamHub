@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TeamHub</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="sidebar">
+      <div class="brand">TeamHub</div>
+      <div class="nav-item" data-route="tasks">Задачи</div>
+      <div class="nav-item" data-route="chat">Чат</div>
+      <div class="nav-item" data-route="documents">Документы</div>
+      <div class="nav-item" data-route="employees" data-admin-only>Сотрудники</div>
+      <div class="nav-item" data-route="settings" data-admin-only>Настройки</div>
+      <div class="sidebar-footer">
+        <div class="user-chip">
+          <span class="name" id="user-name">—</span>
+          <span class="role" id="user-role">—</span>
+        </div>
+        <button class="btn btn-sm" id="change-password-btn" style="width:100%;margin-bottom:6px;">Сменить пароль</button>
+        <button class="btn btn-sm btn-danger" id="logout-btn" style="width:100%;">Выйти</button>
+      </div>
+    </nav>
+    <main class="main">
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/tasks.js"></script>
+  <script src="/js/chat.js"></script>
+  <script src="/js/documents.js"></script>
+  <script src="/js/employees.js"></script>
+  <script src="/js/settings.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
