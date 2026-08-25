@@ -17,6 +17,12 @@
 
 ## Быстрый старт
 
+**Windows, без командной строки:** запустите `installers\server\install-server.bat`
+на компьютере-сервере, затем `installers\client\install-client.bat` на каждом
+рабочем месте — оба мастера всё сделают сами. Подробности — [installers/README.md](installers/README.md).
+
+**Вручную (любая ОС):**
+
 ```bash
 npm install
 npm start
@@ -38,6 +44,7 @@ npm start
 ## Структура проекта
 
 ```
+installers/            установщики для Windows: server/ (сервер), client/ (рабочее место)
 config/            конфигурация сервера (config.json не входит в поставку кода)
 src/
   db/               схема и инициализация SQLite
